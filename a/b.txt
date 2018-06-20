@@ -1,0 +1,4 @@
+write line1
+listaa listbb listcc
+write line2
+Tue May 29 11:11:18 2018 line3

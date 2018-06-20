@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript">
+function disp_alert()
+{
+    alert("alert!!!")
+}
+function disp_prompt()
+{
+    prompt("Please enter your name","Tom");
+}
+function show_confirm() {
+    confirm('confirm!!!');
+}
+function disp_prompt2()
+  {
+  var name=prompt("请输入您的名字","Bill Gates")
+  if (name!=null && name!="")
+    {
+    document.write("你好，" + name + "！今天过得好吗？")
+    }
+  }
+</script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button"  id="alert"  onclick="disp_alert()" value="显示一个alert框" />
+    <input type="button" id="confirm" onclick="show_confirm()" value="显示一个confirm框" />
+    <input type="button" id="prompt" onclick="disp_prompt2()" value="显示一个prompt框" />
+</body>
+</html>

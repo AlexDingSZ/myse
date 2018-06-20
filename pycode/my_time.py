@@ -1,0 +1,33 @@
+import  time
+import  datetime
+
+ts = time.time()
+t = time.localtime(ts)
+print(time.ctime(ts))
+print(time.mktime(t))
+print(time.localtime(ts))
+print(time.strftime("%Y-%m-%d %H:%M:%S",t))
+str = time.strftime("%Y-%m-%d %H:%M:%S",t)
+print(time.strptime(str,"%Y-%m-%d %H:%M:%S"))
+
+print("==========================")
+dt = datetime.datetime.now()
+print(dt)
+dt = datetime.datetime.today()
+print(dt)
+
+print(dt.year)
+print(dt.month)
+print(dt.day)
+print(dt.date())
+print(dt.time())
+print(dt.weekday())
+print(dt.toordinal())
+print(datetime.datetime.fromordinal(365))
+print(dt.utcnow())
+print(dt.isoformat())
+print(datetime.datetime.fromtimestamp(11111111111))
+print(dt.strftime("%Y%m%d%H%M%S"))
+print(dt.timetuple())
+print(datetime.datetime.strptime("20180531094246","%Y%m%d%H%M%S"))
+print(dt-datetime.timedelta(days=-5))

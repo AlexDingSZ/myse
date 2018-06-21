@@ -13,5 +13,5 @@ if __name__ == "__main__":
     runner= HTMLTestRunner(stream=report_file,title=u'自动化测试报告',description='执行测试结果')
     cases = unittest.defaultTestLoader.discover(case_path, pattern="my*.py", top_level_dir=None)
     runner.run(cases)
-    wr.close()
+    report_file.close()
 

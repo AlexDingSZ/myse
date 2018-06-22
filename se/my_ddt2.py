@@ -3,7 +3,7 @@ from ddt import ddt,data,unpack
 
 
 @ddt
-class my_case(unittest.TestCase):
+class my_case_ddt(unittest.TestCase):
     test_data1 = (1,2,3,5)
     test_data2 = ((3, 2), (4, 3), (5, 3))
     test_data3 = [(3, 2), (4, 3), (5, 3)]

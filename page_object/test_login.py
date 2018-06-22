@@ -3,12 +3,17 @@ from page_object.login_page import  login_page
 from ddt import ddt,data,unpack
 from page_object.logger import Logger
 from selenium.webdriver.common.action_chains import ActionChains
+
 logger = Logger(logger="test_login").getlog()
 @ddt
-class test_login(unittest.TestCase):
+class test_login_case6(unittest.TestCase):
 
     t_user = (("admin", "123456"), ("admin", "123456"), ("admin", "123456"))
-    test_login_page = login_page()
+
+    @classmethod
+    def setUpClass(cls):
+        print("from setupclass")
+        cls.test_login_page = login_page()
 
     def setUp(self):
         pass
@@ -18,7 +23,9 @@ class test_login(unittest.TestCase):
     def test_login(self,name,password):
         logger.info("开始测试")
         self.test_login_page.driver.get("http://autotest/wordpress/wp-login.php")
+        self.test_login_page.get_ele_user_name().clear()
         self.test_login_page.get_ele_user_name().send_keys(name)
+        self.test_login_page.get_ele_password().clear()
         self.test_login_page.get_ele_password().send_keys(password)
         test_welcome_page = self.test_login_page.login_btn_click()
         logger.info("点击登录")
@@ -29,6 +36,8 @@ class test_login(unittest.TestCase):
         self.assertEqual(ele,"admin")
         ActionChains(self.test_login_page.driver).move_to_element(test_welcome_page.get_ele_login_name()).perform()
         test_welcome_page.get_ele_logout().click()
+
+
 
 
         # abc =  test_login_page.get_element()

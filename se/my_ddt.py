@@ -2,11 +2,11 @@ import unittest
 from ddt import ddt,data,unpack
 
 @ddt
-class my_case(unittest.TestCase):
+class my_case_ddt(unittest.TestCase):
     test_data1 = (1,2,3,5)
-    test_data2 = ((3, 2), (4, 3), (5, 3))
-    test_data3 = [(3, 2), (4, 3), (5, 3)]
-    test_data4 = [(3, 2), (4, 3), (5, 3)]
+    test_data2 = ((13, 2), (14, 3), (15, 3))
+    test_data3 = [(23, 2), (24, 3), (25, 3)]
+    test_data4 = [(33, 2), (34, 3), (35, 3)]
 
    # @data(1, 2, 3, 3, 5)
     @data(*test_data1)
@@ -26,8 +26,8 @@ class my_case(unittest.TestCase):
 
     @data(*test_data4)
     @unpack
-    def test_ddt_fun4(self,para1):
-        print(para1)
+    def test_ddt_fun4(self,para1,para2):
+        print(para1,para2)
 
 
 if __name__ == "__main__":

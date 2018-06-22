@@ -12,7 +12,7 @@ class login_page(base_page):
         base_page.__init__(self, driver)
 
     def get_ele_user_name(self):
-        return self.get_element(*self.user_name)
+        return self.wait_element(*self.user_name)
 
     def get_ele_password(self):
         return self.get_element(*self.password)
